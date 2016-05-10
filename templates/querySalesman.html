@@ -1,0 +1,60 @@
+{% extends "managerPage.html" %}
+
+{% block header %}
+
+{% end %}
+
+{% block body %}
+    <h3 align="center">销售人员信息查询</h3>
+    <form method="post" action="/querySalesman?userid={{userid}}">
+        <table align="center" border="0"  >
+            <tr>
+                <td>登录ID</td><td><input type="text" name="salesmanId" ></td>
+            </tr>
+            <tr>
+                <td>人员姓名</td><td><input type="text" name="salesmanName" ></td>
+            </tr>
+            <tr>
+                <td>负责区域</td><td><input type="text" name="field" ></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" value="查询">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+        <br>
+        <table align="center" border="1"  >
+            <tr>
+                <td>登录ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>出生日期</td>
+                <td>名族</td>
+                <td>学历</td>
+                <td>联系电话</td>
+                <td>电子邮箱</td>
+                <td>QQ号码</td>
+                <td>负责区域</td>
+                <td>销售经理</td>
+            </tr>
+            {% for salesman in rs %}
+            <tr>
+                <td>{{salesman.USER_ID}}</td>
+                <td>{{salesman.USER_NAME}}</td>
+                <td>{{salesman.USER_SEX}}</td>
+                <td>{{salesman.USER_BIRTHDAY}}</td>
+                <td>{{salesman.USER_NATION}}</td>
+                <td>{{salesman.USER_DEGRESS}}</td>
+                <td>{{salesman.TELEPHONE_NUMBER}}</td>
+                <td>{{salesman.EMAIL_ADDRESS}}</td>
+                <td>{{salesman.USER_QQ}}</td>
+                <td>{{salesman.RESEARCH_FIELDS}}</td>
+                <td>{{salesman.MENTORS}}</td>
+            </tr>
+            {% end %}
+        </table>
+{% end %}
+
+{% block footer %}
+
+{% end %}

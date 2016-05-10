@@ -53,7 +53,7 @@ class SalesmanPasswordUpdateHandler(tornado.web.RequestHandler):
         db = getMysqlConnection()
         sql = 'select * from USER_SALESMAN where USER_ID = %d'%(int(userid))
         rs = db.get(sql)
-        self.render("managerPasswordUpdate.html", userid= userid, rs = rs )
+        self.render("salesmanPasswordUpdate.html", userid= userid, rs = rs )
     def post(self):
         userid = self.get_argument('userid')
         password = self.get_argument('password')
@@ -63,7 +63,7 @@ class SalesmanPasswordUpdateHandler(tornado.web.RequestHandler):
         db.execute(sql)
         sql = 'select * from USER_SALESMAN where USER_ID = %d'%(int(userid))
         rs = db.get(sql)
-        self.render("managerPasswordUpdate.html", userid= userid, rs = rs )
+        self.render("salesmanPasswordUpdate.html", userid= userid, rs = rs )
 
 
 

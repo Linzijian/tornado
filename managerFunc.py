@@ -65,6 +65,47 @@ class ManagerPasswordUpdateHandler(tornado.web.RequestHandler):
         rs = db.get(sql)
         self.render("managerPasswordUpdate.html", userid= userid, rs = rs )
 
+class QuerySalesmanHandler(tornado.web.RequestHandler):
+    def get(self):
+        userid = self.get_argument('userid')
+        rs=[]
+        self.render("querySalesman.html", userid= userid, rs = rs )
+    def post(self):
+        userid = self.get_argument('userid')
+        salesmanId = self.get_argument('salesmanId')
+        salesmanName = self.get_argument('salesmanName')
+        field = self.get_argument('field')
+        itemCount = 0
+        if len(salesmanId)>0:
+            itemCount += 1
+        if len(salesmanName)>0:
+            itemCount += 1
+        if len(field)>0:
+            itemCount += 1
+        db = getMysqlConnection()
+        sql = 'select * from USER_SALESMAN '
+        if itemCount>0:
+            sql += "where "
+        if len(salesmanId)>0:
+            sql += " USER_ID=%d "%(int(salesmanId))
+            itemCount -= 1
+            if itemCount>0:
+                sql += " and "
+        if len(salesmanName)>0:
+            sql += ' USER_NAME="%s" '%(salesmanName)
+            itemCount -= 1
+            if itemCount>0:
+                sql += " and "
+        if len(field)>0:
+            sql += ' RESEARCH_FIELDS="%s" '%(field)
+            itemCount -= 1
+            if itemCount>0:
+                sql += " and "
+        print sql
+        rs = db.query(sql)
+        self.render("querySalesman.html", userid= userid, rs = rs )
+
+
 
 
 

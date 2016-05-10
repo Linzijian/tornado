@@ -102,6 +102,7 @@ if __name__ == '__main__':
                   (r'/managerInfoShow', ManagerInfoShowHandler),
                   (r'/managerInfoUpdate', ManagerInfoUpdateHandler),
                   (r'/managerPasswordUpdate', ManagerPasswordUpdateHandler),
+                  (r'/querySalesman', QuerySalesmanHandler),
 
                   (r'/salesmanInfoShow', SalesmanInfoShowHandler),
                   (r'/salesmanInfoUpdate', SalesmanInfoUpdateHandler),
