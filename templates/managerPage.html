@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+    <body>
+        <p align="right">
+            <a href="/managerInfoShow?userid={{userid}}">查看个人信息</a>&nbsp;&nbsp;&nbsp;
+            <a href="/managerInfoUpdate?userid={{userid}}">修改个人信息</a>&nbsp;&nbsp;&nbsp;
+            <a href="/managerPasswordUpdate?userid={{userid}}">修改登录密码</a>&nbsp;&nbsp;&nbsp;
+            <a href="/querySalesman?userid={{userid}}">查询销售人员</a>&nbsp;&nbsp;&nbsp;
+            <a href="/taskAssign?userid={{userid}}">销售任务分配</a>&nbsp;&nbsp;&nbsp;
+            <a href="/querySales?userid={{userid}}">查询销售情况</a>&nbsp;&nbsp;&nbsp;
+            <a href="/login">退出</a>
+        </p>
+        <h1 align="center">宁夏红枸杞产业集团销售管理系统</h1>
+        <br><hr><br><br>
+        <header>
+        {% block header %}{% end %}
+        </header>
+        <content>
+            {% block body %}{% end %}
+        </content>
+        <footer>
+            {% block footer %}{% end %}
+        </footer>
+    </body>
+
+</html>

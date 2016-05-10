@@ -1,0 +1,71 @@
+<html>
+    <head><title>System</title></head>
+    <body>
+        <p align="right">
+            <a href="/login">登录</a>&nbsp;&nbsp;&nbsp;
+            <a href="/registerForManager">销售经理注册</a>&nbsp;&nbsp;&nbsp;
+            <a href="/registerForSalesman">销售人员注册</a>
+        </p>
+        <p align="center"><b>宁夏红枸杞产业集团销售管理系统</b></p>
+        <br><br><br>
+        <p align="center"><b>销售人员注册</b></p>
+        <form method="post" action="/registerForSalesman">
+        <table align="center" border="0"  >
+            <tr>
+                <td>登陆Id号</td><td><input type="number" name="loginId"></td>
+            </tr>
+            <tr>
+                <td>姓名</td><td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>登陆密码</td><td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <select name="sex">
+                      <option value ="男">男</option>
+                      <option value ="女">女</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>出生日期</td><td><input type="date" name="birthday"></td>
+            </tr>
+            <tr>
+                <td>名族</td><td><input type="text" name="nation"></td>
+            </tr>
+            <tr>
+                <td>学历</td><td><input type="text" name="degree"></td>
+            </tr>
+            <tr>
+                <td>联系电话</td><td><input type="number" name="telephone"></td>
+            </tr>
+            <tr>
+                <td>电子邮箱</td><td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>QQ号码</td><td><input type="number" name="qq"></td>
+            </tr>
+            <tr>
+                <td>用户角色</td>
+                <td><input type="text" name="role" value="销售人员" readonly="true"></td>
+            </tr>
+            <tr>
+                <td>负责区域</td><td><input type="text" name="field"></td>
+            </tr>
+            <tr>
+                <td>销售经理</td><td><input type="text" name="mentor" ></td>
+            </tr>
+            <tr>
+                <td>用户标识</td><td><input type="text" name="flag" value="S" readonly="true"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+        </table>
+
+
+        </form>
+    </body>
+</html>
